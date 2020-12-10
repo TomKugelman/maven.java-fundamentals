@@ -6,24 +6,16 @@ pipeline {
         }
     }
     stages {
-        stage('Build') { 
+        stage('SCM Checkout') {
             steps {
-                sh 'mvn -B -DskipTests clean package' 
+                sh 'git clone https://github.com/TomKugelman/maven.java-fundamentals'
             }
         }
-        stage('Test') {
+
+        stage('Compile-Package') {
             steps {
-                sh 'mvn test'
-            }
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
-                }
-            }
-        }
-        stage('Deliver') {
-            steps {
-                sh './jenkins/scripts/deliver.sh'
+                def mvnHome = tool name: 'maven-3', type: 'maven'
+                sh "${mvnHome}/bin/mvn/package"
             }
         }
     }
