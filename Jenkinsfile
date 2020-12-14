@@ -11,6 +11,7 @@ pipeline {
                 steps {
                     sh 'mvn --version'
                 }
+        }
     }
     stages {
         stage('SCM Checkout') {
