@@ -2,8 +2,7 @@ pipeline {
     agent {
         docker {
             image 'maven:3-alpine' 
-            args '-u root' 
-
+            args 'C:/Program Files (x86)/Jenkins/workspace/maven-fundamentals-pipeline' 
         }
     }
     stages {
