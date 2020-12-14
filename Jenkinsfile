@@ -4,6 +4,13 @@ pipeline {
             image 'maven:3-alpine' 
             args '-v /root/.m2:/root/.m2' 
         }
+        stage('build') {
+                environment {
+                  HOME="."
+                }
+                steps {
+                    sh 'mvn --version'
+                }
     }
     stages {
         stage('SCM Checkout') {

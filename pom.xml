@@ -17,7 +17,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.github.curriculeon.CurriculeonRocks</mainClass>
+                            <mainClass>com.github.curriculeon.TestSuite</mainClass>
                         </manifest>
                     </archive>
                     <source>8</source> <!--compiled from java8-->
