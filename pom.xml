@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.curriculeon</groupId>
+    <groupId>com.github.TomKugelman</groupId>
     <artifactId>java-fundamentals</artifactId>
     <version>1.0</version>
 
@@ -12,8 +12,14 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.0</version>
                 <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.github.curriculeon.CurriculeonRocks</mainClass>
+                        </manifest>
+                    </archive>
                     <source>8</source> <!--compiled from java8-->
                     <target>8</target> <!--compiled to java8-->
                 </configuration>
