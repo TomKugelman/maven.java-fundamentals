@@ -4,6 +4,8 @@ pipeline {
             image 'maven:3-alpine' 
             args '-v /root/.m2:/root/.m2' 
         }
+    }
+    stages {
         stage('build') {
                 environment {
                   HOME="."
@@ -12,8 +14,6 @@ pipeline {
                     sh 'mvn --version'
                 }
         }
-    }
-    stages {
         stage('SCM Checkout') {
             steps {
                 sh 'git clone https://github.com/TomKugelman/maven.java-fundamentals'
