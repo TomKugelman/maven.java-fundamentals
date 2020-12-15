@@ -1,4 +1,4 @@
-FROM maven3:alpine
+FROM openjdk:8-jdk
 COPY . ./usr/src
 RUN cd ./usr/src
 RUN pwd
