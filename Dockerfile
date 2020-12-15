@@ -1,6 +1,4 @@
 FROM openjdk:8-jdk
+RUN nvm package -Dmaven.test.failure.ignore=true
 COPY . ./usr/src
-RUN cd ./usr/src
-RUN pwd
-RUN ls
 CMD ["java","-jar","java-fundamentals-1.0.jar"]
