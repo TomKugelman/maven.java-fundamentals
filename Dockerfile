@@ -1,7 +1,6 @@
 FROM openjdk:8
-COPY . .
-RUN cd /
+COPY . ./usr/src
+RUN cd /usr/src
 RUN pwd
 RUN ls
-COPY ./target/java-fundamentals-1.0.jar ./java-fundamentals-1.0.jar
 CMD ["java","-jar","java-fundamentals-1.0.jar"]
