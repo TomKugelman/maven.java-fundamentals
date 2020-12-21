@@ -16,6 +16,7 @@ pipeline {
         stage('SCM Checkout') {
             steps {
                 sh 'git clone https://github.com/TomKugelman/maven.java-fundamentals $PWD/maven.java-fundamentals'
+                sh 'ls'
             }
         }
         stage('Compile-Package-Test') {
